@@ -1,0 +1,24 @@
+
+
+<div class="jumbotron push">
+  <div class="col-md-12">
+    <form (submit) = "search()" class="jump">
+      <div class="form-group">
+        <label for="Repo">Enter Repo (username/repo-name)</label>
+        <input type="text" class="form-control" placeholder="username/reponame" name="username" [(ngModel)] = "username"/>
+        <input type="submit" value="Fetch" class="btn btn-info"/>
+      </div>
+    </form>
+  </div>
+</div>
+{{pulls}}
+<div *ngFor="let pull of pulls">
+  <div class="card card-inverse card-primary mb-3 text-center">
+    <div class="card-block">
+      <blockquote class="card-blockquote">
+        <h3>Title : {{pull.title}}</h3>
+        <p>Author : {{pull.author}}</p>
+      </blockquote>
+    </div>
+  </div>
+</div>
